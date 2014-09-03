@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<ehcache>
+
+	<defaultCache maxElementsInMemory="100" eternal="false"
+		timeToIdleSeconds="200" timeToLiveSeconds="200" />
+
+	<cache name="com.model.Account" maxElementsInMemory="100"
+		eternal="false" timeToIdleSeconds="500" timeToLiveSeconds="1000"
+		overflowToDisk="true" />
+
+</ehcache>

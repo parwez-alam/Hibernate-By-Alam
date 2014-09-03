@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- jdbc properties -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/asjt_db</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">admin</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- ends jdbc properties -->
+
+		<!-- hibernate specific properties -->
+
+		<!-- hibernate dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- ends hibernate dialect -->
+
+		<!-- transaction factory -->
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<!-- ends transaction factory -->
+
+		<!-- schema generation property -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- ends schema generation property -->
+	
+		<!-- display generated query at console for test -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<!-- end display generated query at console for test -->
+
+		<!-- enable 2nd level cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.cache.provider_configuration_file_resource_path">/synergistic.xml</property>
+		<!-- end enable 2nd level cache -->
+
+		<!-- enable query cache -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- end enable query cache -->
+
+		<!-- for setting isolation level -->
+		<property name="hibernate.connection.isolation">2</property>
+		<!-- end for setting isolation level -->
+
+		<!-- for connection pooling -->
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<!-- ends for connection pooling -->
+
+		<!-- ends hibernate specific properties -->
+
+		<!-- mapping information -->
+		<mapping resource="Employee.hbm.xml" />
+		<mapping class="org.model.PartTimeEmployee" />
+		<mapping class="org.model.Person" />
+		<mapping class="org.model.AddressDetail" />
+		<mapping class="org.model.University" />
+		<mapping class="org.model.College" />
+
+		<mapping class="org.model.Customer" />
+		<mapping class="org.model.Product" />
+
+
+		<mapping class="org.model.User" />
+		<mapping class="org.model.Vendor" />
+		<mapping class="org.model.Consumer" />
+		<mapping class="org.model.Account" />
+		<!-- ends mapping information -->
+
+	</session-factory>
+</hibernate-configuration>

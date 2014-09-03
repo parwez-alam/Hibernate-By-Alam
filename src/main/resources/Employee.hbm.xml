@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.model.Employee" table="employee_tbl">
+		<id name="eid" column="EmpID">
+			<generator class="native" />
+		</id>
+		<property name="fname" column="FirstName" not-null="true" />
+		<property name="lname" column="LastName" not-null="true" />
+		<property name="email" column="Email" />
+		<property name="contact" column="Phone" />
+		<property name="dept" column="Detartment" />
+		<property name="jdate" column="JDate" />
+		<property name="salary" column="Salary" />
+	</class>
+
+</hibernate-mapping>
